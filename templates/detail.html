@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>My Blog</title>
+</head>
+<body>
+{% block content %}
+<header>
+  <h1><a href="{% url 'home' %}">Home page</a></h1>
+
+</header>
+<center>
+<div class="container">
+
+    <div class="details">
+        <h2>{{ details.title }}</h2>
+        <img src="{{ details.image.url }}" class="d-block w-100"  alt="...">
+    <p>{{ details.body }}</p>
+    </div>
+{% endblock content %}
+</div>
+</center>
+</body>
+</html>

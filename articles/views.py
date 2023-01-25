@@ -25,7 +25,8 @@ def thanks_page(request):
     if request.POST:
         title = request.POST['title']
         body = request.POST['body']
-        element = Articles(title = title, body = body)
+        image = request.POST['image']
+        element = Articles(title = title, body = body, image = image)
         element.save()
         return render(request, './thanks.html')
     else:

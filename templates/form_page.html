@@ -2,9 +2,9 @@
 <h1><a href="{% url 'home' %}">Home page</a></h1>
   	<center><section>
   		<div class="container class_form">
-  			<h1 class="text-3">Send</h1>
+  			<h1 class="text-3">Create your own article</h1>
   			<div class="row justify-content-center">
-  			<form action= "{% url 'thanks' %}" method="POST" style="width: 50%;" >
+  			<form action= "{% url 'thanks' %}" method="POST" style="width: 50%;" enctype="multipart/form-data">
 				{% csrf_token %}
 			  <div class="form-group row">
 			    <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label><br>
@@ -13,19 +13,19 @@
 			    </div>
 			  </div>
 			  <div class="form-group row">
-			    <label for="inputEmail3" class="col-sm-2 col-form-label">text</label><br>
+			    <label for="inputEmail3" class="col-sm-2 col-form-label">Text</label><br>
 				  {{ form.body }}
 			    <div class="">
 			    </div>
 			  </div>
 				<div class="form-group row">
-			    <label for="file-input" class="col-sm-2 col-form-label">image</label><br>
+			    <label for="file-input" class="col-sm-2 col-form-label">Image</label><br>
 				  {{ form.image }}
 			    <div class="">
 			    </div>
 			  </div>
 			  <div style="float: center;" class="form-group row">
-			      <button type="submit" class="btn btn-success">ОСТАВИТЬ ЗАЯВКУ</button>
+			      <button type="submit" class="btn btn-success">Send article</button>
 			  </div>
 			</form>
 			</div>

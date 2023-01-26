@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Articles
 from django.views.generic import ListView, DetailView
 from .forms import UserForm
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
@@ -25,7 +26,7 @@ def thanks_page(request):
     if request.POST:
         title = request.POST['title']
         body = request.POST['body']
-        image = request.POST['image']
+        image = request.FILES['image']
         element = Articles(title = title, body = body, image = image)
         element.save()
         return render(request, './thanks.html')
